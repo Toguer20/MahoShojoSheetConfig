@@ -1,0 +1,190 @@
+# Configure Rolls
+rollFormula = "2d6"
+statToggle = "Locked"
+
+# Define roll result ranges.
+[rollResults]
+  [rollResults.failure]
+    range = "6-"
+    label = "Complicaciones..."
+  [rollResults.partial]
+    range = "7-9"
+    label = "Exito parcial"
+  [rollResults.success]
+    range = "10+"
+    label = "Exito total!"
+
+########################################
+## CHARACTERS ##########################
+########################################
+# Define the character group.
+[character]
+
+  # Define stats.
+  [character.stats]
+    combativa = "Combativa"
+    protectora = "Protectora"
+    reflexiva = "Reflexiva"
+    emocional = "Emocional"
+    entregada = "Entregada"
+
+  # Define attributes.
+  
+  [character.attributesTop]
+    [character.attributesTop.xp]
+      type = "Xp"
+      label = "Puntos de Tinieblas"
+      max = 5
+    [character.attributesTop.Oscuridad]
+    	type = "Xp"
+      label = "Puntos de Oscuridad"
+      max = 8
+     [character.attributesTop.NivelOscuridad]
+      type = "Xp"
+      label = "Nivel de Oscuridad"
+      max = 5
+     [character.attributesTop.Amistad]
+     type = "Xp"
+     label = "Puntos de Amistad"
+     max = 10
+    [character.attributesTop.LuxPoints]
+      type = "Xp"
+      label = "Puntos de Luz(Poder)"
+      max = 5
+      [character.attributesTop.LuxEst]
+      type = "Xp"
+      label = "Lux Est"
+      max = 10
+      
+      
+
+  # Define sidebar details.
+  [character.attributesLeft]
+  [character.attributesLeft.Avances]
+      type = "Number"
+      label = "Avances"
+  [character.attributesLeft.heroName]
+      type = "Text"
+      label = "Titulo"
+  [character.attributesLeft.Name]
+    	type= "Text"
+      label = "Tema"
+      [character.attributesLeft.Castigo]
+      type = "Xp"
+      label = "Castigo"
+      max = 5
+      [character.attributesLeft.Azote]
+      type = "Xp"
+      label = "Azote"
+      max = 5
+    [character.attributesLeft.conditions]
+      type = "ListMany"
+      label = "Conditions"
+      description = "Choose all that apply:"
+      condition = true
+      options = [
+        "Destrozada (-2 a Combativa)",
+        "Deprimida (-2 a Protectora)",
+        "Atontada (-2 a Reflexiva)",
+        "Cabreada (-2 a Emocional)",
+        "Rechazada (-2 a Entregada)"
+      ]
+      [character.attributesLeft.conditionsNum]
+      type = "Xp"
+      label= "Condiciones"
+      max = 5
+      
+    [character.attributesLeft.look]
+      type = "Text"
+      label = "Color"
+    [character.attributesLeft.abilities]
+      type = "LongText"
+      label = "Talismán"
+    [character.attributesLeft.influence]
+      type = "Number"
+      label = "Edad"
+    [character.attributesLeft.moment]
+      type = "LongText"
+      label = "Estilo de vida"
+
+  # Define groups for moves.
+  [character.moveTypes]
+    basic = "Movimientos basicos"
+    specific = "Poderes de Libreto"
+    oscuridad = "Poderes de la Oscuridad"
+    playbook = "Poder del Corazón"
+    amistad = "Movimientos de Amistad"
+    team = "Team Moves"
+
+  # Define groups for equipment.
+
+########################################
+## NPCS ################################
+########################################
+# Define stats.
+[npc]
+  # Define attributes.
+  [npc.attributesTop]
+    [npc.attributesTop.realName]
+      type = "Text"
+      label = "Real Name"
+    [npc.attributesTop.relation]
+      type = "Text"
+      label = "Relación con"
+  [npc.attributesLeft]
+    [npc.attributesLeft.info]
+      type = "LongText"
+      label = "Información publica"
+    [npc.attributesLeft.abilities]
+      type = "Text"
+      label = "Ocupación"
+      [npc.attributesLeft.hobbies]
+      type = "Text"
+      label = "Hobbies"
+      
+[npcMaster]
+	# Define attributes.
+  [npcMaster.attributesTop]
+  [npcMaster.attributesTop.realName]
+      type = "Text"
+      label = "Real Name"
+    [npcMaster.attributesTop.generation]
+      type = "Text"
+      label = "Relación con"
+   [npcMaster.attributesLeft.fear]
+   		type = "LongText"
+   		label = "Miedos / Debilidades"
+   [npcMaster.attributesLeft.personalidad]
+   		type= "LongText"
+      label= "Personalidad"
+  
+    
+[npcMaster.moveTypes]
+other = "Moves"
+
+  # Define logical groups for moves.
+  [npc.moveTypes]
+    villain = "Moves"
+    
+    
+ [dark]
+ 		#Define attributes.
+    [dark.attributesTop]
+    	[dark.attributesTop.realName]
+      	type = "Text"
+        label = "Real Name"
+        [dark.attributesTop.DarkLvl]
+        type="Number"
+        label= "Poder de Oscuridad"
+        [dark.attributesTop.Angustia]
+        type = "Number"
+        label = "Angustia"
+      [dark.attributesLeft]
+      	[dark.attributesLeft.Tema]
+        type = "Text"
+        label = "Tema"
+        [dark.attributesLeft.Categoria]
+        type = "Text"
+        label = "Categoría"
+        [dark.moveTypes]
+        basic = "Dones Oscuros"
